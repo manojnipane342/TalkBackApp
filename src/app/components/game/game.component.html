@@ -1,0 +1,29 @@
+<app-default-layout></app-default-layout>
+
+<div class="outer-cont">
+	<!-- <h2 *ngIf="freshpage">Let's Play Tic-Tac-Toe</h2> -->
+	<h1 *ngIf="!winner && !isDraw && !freshpage">Current Player: {{Player}}</h1>
+	<h2 *ngIf="winner">Player {{winner}} won!</h2>
+	<h2 *ngIf="isDraw">Draw!!</h2>
+	
+	<main *ngIf="!winner && !isDraw">
+		<app-board *ngFor="let val of squares; let i = index"
+		[value]="val" (click)="makeMove(i)" class="board"></app-board>
+	</main>
+	<button (click)="newGame()">Start Game</button>
+</div>
+
+<!-- <div class="chat-container">
+	<ul class="chat">
+		<li class="message left">
+			<img class="logo" src="https://randomuser.me/api/portraits/women/17.jpg" alt="">
+			<p>I'm hungry!</p>
+		</li>
+		<li class="message right">
+			<img class="logo" src="https://randomuser.me/api/portraits/men/67.jpg" alt="">
+			<p>Hi hungry, nice to meet you. I'm Dad.</p>
+		</li>
+	</ul>
+	<input type="text" class="text_input" placeholder="Message..."/>
+</div> -->
+
